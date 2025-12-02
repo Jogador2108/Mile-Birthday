@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Minha Quase-Irmã - Feliz Aniversário!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #ff6b9d;
+            --secondary: #5d43fd;
+            --accent: #ffde59;
+            --light: #fff5f9;
+            --dark: #2a1a5e;
+            --text: #333333;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--light) 0%, #fceef5 100%);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header e Hero Section */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 100px 0 80px;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.1)" d="M0,0 L100,0 L100,100 Z"></path></svg>');
+            background-size: cover;
+        }
+
+        .birthday-date {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            opacity: 0.9;
+            letter-spacing: 3px;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 5rem;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-weight: 300;
+        }
+
+        .floating-hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+
+        .heart {
+            position: absolute;
+            color: var(--accent);
+            font-size: 24px;
+            opacity: 0.7;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+
+        /* Seções */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        /* Seção Quase-Irmã */
+        .sister-section {
+            background-color: white;
+            border-radius: 20px;
+            padding: 60px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sister-section::before {
+            content: "❤";
+            position: absolute;
+            font-size: 300px;
+            color: rgba(255, 107, 157, 0.05);
+            top: -100px;
+            right: -50px;
+            transform: rotate(25deg);
+        }
+
+        .sister-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .highlight {
+            color: var(--secondary);
+            font-weight: 600;
+            background-color: rgba(93, 67, 253, 0.1);
+            padding: 0 5px;
+            border-radius: 3px;
+        }
+
+        /* Seção de Luz e Brilho */
+        .light-section {
+            background: linear-gradient(135deg, #fff9e6 0%, #ffe6f2 100%);
+            clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+            padding: 100px 0;
+            margin: 80px 0;
+        }
+
+        .light-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .light-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .light-icon {
+            flex: 0 0 200px;
+            text-align: center;
+        }
+
+        .light-icon i {
+            font-size: 150px;
+            color: var(--accent);
+            filter: drop-shadow(0 5px 15px rgba(255, 222, 89, 0.4));
+        }
+
+        /* Seção de Quadros */
+        .art-section {
+            background-color: white;
+            padding: 80px 0;
+        }
+
+        .art-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            font-size: 1.2rem;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .artwork {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .artwork:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .artwork-img {
+            height: 250px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 5rem;
+        }
+
+        .artwork-info {
+            padding: 20px;
+        }
+
+        .artwork-title {
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .collection-text {
+            text-align: center;
+            font-size: 1.4rem;
+            margin-top: 60px;
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.1) 0%, rgba(93, 67, 253, 0.1) 100%);
+            border-radius: 15px;
+            font-weight: 500;
+        }
+
+        /* Mensagem Final */
+        .final-message {
+            background: linear-gradient(135deg, var(--dark) 0%, #4a2fb5 100%);
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+            margin-top: 80px;
+        }
+
+        .final-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4rem;
+            margin-bottom: 30px;
+            color: var(--accent);
+        }
+
+        .final-text {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-top: 30px;
+        }
+
+        /* Animações e efeitos */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .confetti {
+            position: fixed;
+            width: 15px;
+            height: 15px;
+            background-color: var(--primary);
+            top: -10px;
+            opacity: 0;
+            z-index: 9999;
+            pointer-events: none;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.8rem;
+            }
+            
+            .sister-section, .light-section, .art-section {
+                padding: 40px 20px;
+            }
+            
+            .light-content {
+                flex-direction: column;
+            }
+            
+            .final-title {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Confetti -->
+    <div id="confetti-container"></div>
+
+    <!-- Header/Hero -->
+    <header>
+        <div class="floating-hearts" id="hearts-container"></div>
+        <div class="container">
+            <div class="birthday-date">02 DE DEZEMBRO</div>
+            <h1>Feliz Aniversário!</h1>
+            <p class="hero-subtitle">Para aquela que veio ao mundo como prima, mas que em meu coração se tornou muito mais que isso...</p>
+            <div class="birthday-cake" style="font-size: 60px; margin-top: 30px;">🎂🎉🎁</div>
+        </div>
+    </header>
+
+    <!-- Seção Quase-Irmã -->
+    <section>
+        <div class="container">
+            <h2 class="section-title fade-in">Minha Quase-Irmã</h2>
+            <div class="sister-section fade-in">
+                <p class="sister-text">Desde que me entendo por gente, você esteve presente. Não pelo acaso do sangue, mas pela escolha do coração. O que começou como um laço familiar transformou-se em algo mais profundo, mais verdadeiro.</p>
+                <p class="sister-text">Você se tornou minha <span class="highlight">quase-irmã</span> – a confidente dos segredos mais guardados, a cúmplice das aventuras mais improváveis, a testemunha das transformações que a vida nos traz. E nessa jornada, descobri que irmandade não se mede por grau de parentesco, mas pela intensidade do afeto e pela constância do cuidado.</p>
+                <p class="sister-text">Hoje, celebro não apenas o dia do seu nascimento, mas cada momento que construímos juntas e cada memória que nos uniu ainda mais. Porque família são os laços que escolhemos fortalecer a cada riso compartilhado, a cada lágrima enxugada, a cada sonho acalentado em conjunto.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Luz e Brilho -->
+    <section class="light-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Sua Luz Interior</h2>
+            <div class="light-content">
+                <div class="light-text fade-in">
+                    <p class="sister-text">Você sempre busca uma luz no fim do túnel, uma esperança nos dias cinzentos, um raio de sol após a tempestade. O que talvez você ainda não tenha percebido é que <span class="highlight">você mesma é essa luz</span>.</p>
+                    <p class="sister-text">Sua capacidade de encontrar beleza na simplicidade, de enxergar possibilidades onde outros veem limites, de manter a fé quando tudo parece desmoronar - isso tudo emana de você como um farol que guia não apenas a si mesma, mas todos que têm o privilégio de estar ao seu redor.</p>
+                    <p class="sister-text">E nesse aniversário, quero que você lembre: a pessoa mais <span class="highlight">brilhante</span> que já conheci não está em nenhum palco, não está em nenhuma tela. Está aqui, celebrando mais uma volta ao sol, iluminando minha vida e a de tantos outros com sua essência única e extraordinária.</p>
+                </div>
+                <div class="light-icon fade-in">
+                    <i class="fas fa-sun"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Quadros/Obras de Arte -->
+    <section class="art-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Galeria de Obras-Primas</h2>
+            <p class="art-intro fade-in">Se há algo que sempre me impressionou em você é sua capacidade de transformar emoções em arte. Cada quadro que você pinta não é apenas tinta sobre tela, mas um fragmento da sua alma, uma história contada através de cores e formas.</p>
+            
+            <div class="gallery">
+                <!-- Quadro 1 -->
+                <div class="artwork fade-in">
+                    <div class="artwork-img">
+                        🎨
+                    </div>
+                    <div class="artwork-info">
+                        <h3 class="artwork-title">"Luz Interior"</h3>
+                        <p>Aquele quadro onde você capturou a dança das cores como metáfora da esperança que sempre carrega consigo.</p>
+                    </div>
+                </div>
+                
+                <!-- Quadro 2 -->
+                <div class="artwork fade-in">
+                    <div class="artwork-img">
+                        🌌
+                    </div>
+                    <div class="artwork-info">
+                        <h3 class="artwork-title">"Noite Estrelada"</h3>
+                        <p>Sua interpretação única das estrelas que brilham mesmo nas noites mais escuras - assim como você.</p>
+                    </div>
+                </div>
+                
+                <!-- Quadro 3 -->
+                <div class="artwork fade-in">
+                    <div class="artwork-img">
+                        🌸
+                    </div>
+                    <div class="artwork-info">
+                        <h3 class="artwork-title">"Florescer"</h3>
+                        <p>A tela que representa renascimento e crescimento, tão característicos da sua jornada.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="collection-text fade-in">
+                <p>E sabe qual é meu maior desejo de colecionador? <span style="color: var(--primary); font-weight: 600;">Ter uma coleção completa de todas as suas obras</span>. Cada quadro, cada esboço, cada manifestação da sua criatividade. Porque sua arte não decora paredes, mas aquece corações e conta histórias que merecem ser preservadas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mensagem Final -->
+    <section class="final-message">
+        <div class="container">
+            <h2 class="final-title fade-in">Para Você, Hoje e Sempre</h2>
+            <p class="final-text fade-in">Neste dia especial, desejo que cada momento seja tão radiante quanto você é. Que o novo ano de vida traga ainda mais cores para sua paleta, ainda mais luz para seu caminho, ainda mais motivos para sorrir.</p>
+            <p class="final-text fade-in">Que você continue espalhando sua magia por onde passar, inspirando com sua sensibilidade, fortalecendo com sua resiliência, encantando com sua autenticidade.</p>
+            <p class="final-text fade-in">Hoje, no seu aniversário, celebro a maravilhosa pessoa que você é e a incrível quase-irmã que você se tornou para mim.</p>
+            
+            <div class="signature fade-in">Com todo o meu carinho,<br>Sua quase-irmã</div>
+            
+            <div style="margin-top: 50px; font-size: 2rem;" class="fade-in">
+                <span style="animation: float 3s ease-in-out infinite;">💖</span>
+                <span style="animation: float 3s ease-in-out infinite 0.5s;">🎂</span>
+                <span style="animation: float 3s ease-in-out infinite 1s;">🎨</span>
+                <span style="animation: float 3s ease-in-out infinite 1.5s;">✨</span>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Criar corações flutuantes
+        function createHearts() {
+            const container = document.getElementById('hearts-container');
+            const heartCount = 20;
+            
+            for (let i = 0; i < heartCount; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.innerHTML = '❤';
+                
+                // Posição aleatória
+                const left = Math.random() * 100;
+                const top = Math.random() * 100;
+                const delay = Math.random() * 5;
+                const size = 15 + Math.random() * 20;
+                
+                heart.style.left = `${left}%`;
+                heart.style.top = `${top}%`;
+                heart.style.fontSize = `${size}px`;
+                heart.style.animationDelay = `${delay}s`;
+                
+                container.appendChild(heart);
+            }
+        }
+        
+        // Criar confetti
+        function createConfetti() {
+            const container = document.getElementById('confetti-container');
+            const confettiCount = 150;
+            const colors = ['#ff6b9d', '#5d43fd', '#ffde59', '#6bffb8', '#43c5fd'];
+            
+            for (let i = 0; i < confettiCount; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                
+                // Cor aleatória
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.backgroundColor = color;
+                
+                // Posição e animação aleatórias
+                const left = Math.random() * 100;
+                const animationDuration = 3 + Math.random() * 5;
+                const fallDelay = Math.random() * 5;
+                const size = 5 + Math.random() * 10;
+                
+                confetti.style.left = `${left}vw`;
+                confetti.style.width = `${size}px`;
+                confetti.style.height = `${size}px`;
+                confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+                
+                // Animar confetti
+                const animation = confetti.animate([
+                    { top: '-10px', opacity: 1, transform: 'rotate(0deg)' },
+                    { top: '100vh', opacity: 0.7, transform: `rotate(${Math.random() * 360}deg)` }
+                ], {
+                    duration: animationDuration * 1000,
+                    delay: fallDelay * 1000,
+                    easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)'
+                });
+                
+                // Repetir animação
+                animation.onfinish = () => {
+                    confetti.style.top = '-10px';
+                    confetti.style.opacity = '0';
+                    setTimeout(() => {
+                        confetti.animate([
+                            { top: '-10px', opacity: 1, transform: 'rotate(0deg)' },
+                            { top: '100vh', opacity: 0.7, transform: `rotate(${Math.random() * 360}deg)` }
+                        ], {
+                            duration: animationDuration * 1000,
+                            easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)'
+                        });
+                    }, 500);
+                };
+                
+                container.appendChild(confetti);
+            }
+        }
+        
+        // Animação de aparecimento ao rolar
+        function fadeInOnScroll() {
+            const elements = document.querySelectorAll('.fade-in');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+        
+        // Inicializar quando a página carregar
+        document.addEventListener('DOMContentLoaded', function() {
+            createHearts();
+            createConfetti();
+            fadeInOnScroll();
+            
+            // Adicionar evento de scroll
+            window.addEventListener('scroll', fadeInOnScroll);
+            
+            // Tocar música de fundo (opcional)
+            const audio = new Audio('https://assets.mixkit.co/music/preview/mixkit-happy-birthday-to-you-443.mp3');
+            audio.volume = 0.3;
+            
+            // Reproduzir música após interação do usuário (para evitar bloqueio de autoplay)
+            document.body.addEventListener('click', function() {
+                audio.play().catch(e => console.log("Reprodução de áudio não permitida automaticamente"));
+            }, { once: true });
+        });
+        
+        // Mensagem especial no console
+        console.log("%c✨ Para minha quase-irmã: Feliz Aniversário! Que seu dia seja tão especial quanto você é. ✨", "color: #ff6b9d; font-size: 16px; font-weight: bold;");
+    </script>
+</body>
+</html>
